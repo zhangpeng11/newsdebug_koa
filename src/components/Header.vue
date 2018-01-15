@@ -28,7 +28,7 @@ export default {
   methods: {
       directSearchList () {
           let keyword = this.$refs.searchInput.value
-          window.open('/#/webnewsdev/news_search_server?keyword='+keyword+'&env='+util.get_url_strs(location.href).env)
+          window.open('/webnewsdev/news_search_server?keyword='+keyword+'&env='+util.get_url_strs(location.href).env)
       }
   }
 }

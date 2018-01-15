@@ -1,6 +1,6 @@
 <template>
   <el-col class="newsItem">
-    <div style="overflow:hidden" @click="turnNewsDetail(itemData.aid, $event)">
+    <div style="overflow:hidden;widht:100%;height:100%;" @click="turnNewsDetail(itemData.aid, $event)">
         <p class="newsTitle" ref="newsTitle"></p>
         <div class="picBox" v-if="itemData.list_image_urls.length > 0">
             <img :src="itemData.list_image_urls[0]" alt="">
@@ -36,7 +36,7 @@ export default {
             return hash.decode(this.itemData.aid)
         },
         dataUrl () {
-            return "/#/webnewsdev/news_data_server?aid="+this.itemData.aid+"&env="+util.get_url_strs(location.href).env
+            return "/webnewsdev/news_data_server?aid="+this.itemData.aid+"&env="+util.get_url_strs(location.href).env
         }
     },
     methods: {
@@ -44,7 +44,7 @@ export default {
             if(event.target.tagName != "DIV"){
                 return 
             }
-            window.open('/#/webnewsdev/news_detail_server?aid='+aid+'&env='+util.get_url_strs(location.href).env)
+            window.open('/webnewsdev/news_detail_server?aid='+aid+'&env='+util.get_url_strs(location.href).env)
         }
     }
 }

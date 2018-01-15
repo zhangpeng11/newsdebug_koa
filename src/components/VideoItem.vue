@@ -36,7 +36,7 @@ export default {
             return hash.decode(this.itemData.aid)
         },
         dataUrl () {
-            return "/#/webnewsdev/news_data_server?aid="+this.itemData.aid+ "&env="+util.get_url_strs(location.href).env
+            return "/webnewsdev/news_data_server?aid="+this.itemData.aid+ "&env="+util.get_url_strs(location.href).env
         }
     },
     props:['itemData'],
@@ -45,7 +45,7 @@ export default {
             if(event.target.tagName != "DIV"){
                 return 
             }
-            window.open('/#/webnewsdev/news_detail_server?aid='+aid+'&env='+util.get_url_strs(location.href).env)
+            window.open('/webnewsdev/news_detail_server?aid='+aid+'&env='+util.get_url_strs(location.href).env)
         }
     }
 }

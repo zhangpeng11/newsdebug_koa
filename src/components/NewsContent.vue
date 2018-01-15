@@ -68,7 +68,7 @@ export default {
             }
         },
         jsonData(){
-            window.open('/#/webnewsdev/news_data_server?aid='+this.urlQuerys.aid+'&env='+this.urlQuerys.env)
+            window.open('/webnewsdev/news_data_server?aid='+this.urlQuerys.aid+'&env='+this.urlQuerys.env)
         }
     }
 }

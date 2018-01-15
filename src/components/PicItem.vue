@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         turnNewsDetail (aid) {
-            window.open('/#/webnewsdev/news_detail_server?aid='+aid+'&env='+util.get_url_strs(location.href).env)
+            window.open('/webnewsdev/news_detail_server?aid='+aid+'&env='+util.get_url_strs(location.href).env)
         }
     }
 }
