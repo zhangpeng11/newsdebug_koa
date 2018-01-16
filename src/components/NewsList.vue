@@ -96,7 +96,6 @@ export default {
             let self = this
             this.$el.addEventListener('mousewheel',(e)=>{
                 if(this.$el.scrollTop == 0 && e.deltaY < -200){
-                    console.log(2222)
                     self.refreshBtn = true
                     self.getNewsData('refresh')
                 }

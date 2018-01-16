@@ -41,7 +41,6 @@ export default {
       axios.get('/webnewsdev/api/channelData')
         .then((response)=>{
           if(response.data.status == 1){
-            this.$store.commit('changeCurChid',response.data.data.channels[0].chid)
             this.$store.commit('changeChannelList',response.data.data.channels)
             this.$store.commit('changevChannelList',response.data.data.v_channels)
             bus.$emit('changeChannel')

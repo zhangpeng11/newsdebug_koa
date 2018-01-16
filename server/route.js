@@ -76,7 +76,21 @@ route.get('/esNewsData/', async (ctx)=>{
                 }
             }
         })
-    });
+    })
+})
+
+route.get('/redisNewsData/', async (ctx)=>{
+    let item_id = ctx.query.item_id;
+    let redis_result = new Promise((resolve, reject) => {
+        redisDataBase.hgetall('Article#'+item_id, (err,data)=>{
+            if(err){
+                logger.error(err);
+                res.end();
+                reject();
+            }
+            resolve(data);
+        })
+    })
 })
 
 route.get('/newsData/', async (ctx)=>{

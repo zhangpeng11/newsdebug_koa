@@ -14,4 +14,4 @@ router.use('/webnewsdev/api', route.routes(), route.allowedMethods())
 app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(8889)
-console.log('[demo] start-quick is starting at port 8889')
+console.log('start-quick is starting at port 8889')

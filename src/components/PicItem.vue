@@ -1,6 +1,6 @@
 <template>
   <el-col class="newsItem">
-    <div style="overflow:hidden" @click="turnNewsDetail(itemData.aid)">
+    <div style="overflow:hidden" @click="turnNewsDetail(itemData.aid, $event)">
         <p class="newsTitle" ref="newsTitle"></p>
         <div class="picBox" v-if="itemData.image.urls.length > 0">
             <img :src="itemData.image.urls[0]">
@@ -37,7 +37,10 @@ export default {
         }
     },
     methods: {
-        turnNewsDetail (aid) {
+        turnNewsDetail (aid,event) {
+            if(event.target.tagName != "DIV"){
+                return 
+            }
             window.open('/webnewsdev/news_detail_server?aid='+aid+'&env='+util.get_url_strs(location.href).env)
         }
     }
